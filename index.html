@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ксения Самсонова - Визитка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #186DB3 0%, #3997e4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .visiting-card {
+            background: url('./img/iPhone 16 - 3.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            width: 320px;
+            height: 780px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .group-32-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 3;
+        }
+
+        .profile-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 372px;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .middle-image {
+            position: absolute;
+            top: 372px;
+            left: 0;
+            width: 100%;
+            height: 437px;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .text-block {
+            position: absolute;
+            top: 202px;
+            left: 11px;
+            z-index: 10;
+            color: white;
+            max-width: 70%;
+        }
+
+        .name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 29px;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 1;
+        }
+
+        .agency-name {
+            font-size: 11px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .icon {
+            position: absolute;
+            top: 179px;
+            left: 11px;
+            z-index: 10;
+            width: 38px;
+            height: auto;
+        }
+
+        .group-35 {
+            position: absolute;
+            bottom: 432px;
+            left: 16%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: 80px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .right-icons {
+            position: absolute;
+            bottom: 433px;
+            right: 11px;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+            gap: 17px;
+        }
+
+        .right-icon {
+            width: 37px;
+            height: 37px;
+            cursor: pointer;
+        }
+
+        .formula-text {
+            position: absolute;
+            bottom: 230px;
+            left: 37px;
+            right: 37px;
+            z-index: 10;
+            color: #186DB3;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            padding-left: 0;
+        }
+
+        .formula-title {
+            font-weight: 540;
+            font-size: 15px;
+            line-height: 1.2;
+            margin-bottom: 17px;
+            text-align: center;
+            padding-left: 0;
+        }
+
+        .divider {
+            width: 87px;
+            height: 1px;
+            background: #186DB3;
+            margin: 17px auto;
+            opacity: 0.7;
+        }
+
+        .formula-list {
+            text-align: left;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.4;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .formula-item {
+            margin-bottom: 8px;
+            padding-left: 0;
+            text-indent: 0;
+        }
+
+        .formula-stats {
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #186DB3;
+            margin-top: 13px;
+            text-align: left;
+            padding-left: 0;
+            text-indent: 0;
+        }
+
+        .group-image-left {
+            position: absolute;
+            bottom: 84px;
+            left: 22px;
+            z-index: 10;
+            width: 136px;
+            height: auto;
+        }
+
+        /* Контейнер для картинок с текстом - ПРИБЛИЖЕН К ЛЕВОМУ КРАЮ */
+        .right-column-icons {
+            position: absolute;
+            bottom: 94px;
+            right: 11px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .column-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #E79A46;
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            font-weight: 400;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .column-item:hover {
+            background: rgba(24, 109, 179, 0.1);
+        }
+
+        .column-item:hover::after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #186DB3;
+            border-radius: 1px;
+        }
+
+        .column-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .column-text {
+            white-space: nowrap;
+        }
+
+        .learn-more-btn {
+            position: absolute;
+            bottom: 17px;
+            left: 22px;
+            right: 22px;
+            z-index: 10;
+            background: #186DB3;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 350;
+            font-size: 14.5px;
+            padding: 15px 22px;
+            border: none;
+            border-radius: 27px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(24, 109, 179, 0.3);
+            transition: background 0.3s ease;
+            width: calc(100% - 44px);
+        }
+
+        .learn-more-btn:hover {
+            background: #145a9e;
+        }
+
+        /* Медиа-запросы для адаптации под телефон */
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #186DB3 0%, #3997e4 100%);
+                transform: scale(0.85);
+                transform-origin: center center;
+            }
+            
+            .visiting-card {
+                width: 320px;
+                height: 780px;
+                border-radius: 18px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+                margin: 0 auto;
+            }
+            
+            /* Все размеры остаются точно такими же как в десктопной версии */
+            .profile-image {
+                height: 372px;
+            }
+            
+            .middle-image {
+                top: 372px;
+                height: 437px;
+            }
+            
+            .text-block {
+                top: 202px;
+                left: 11px;
+                max-width: 70%;
+            }
+            
+            .name {
+                font-size: 29px;
+            }
+            
+            .title {
+                font-size: 11px;
+            }
+            
+            .agency-name {
+                font-size: 11px;
+            }
+            
+            .icon {
+                top: 179px;
+                left: 11px;
+                width: 38px;
+            }
+            
+            .group-35 {
+                bottom: 432px;
+                left: 16%;
+                width: 80px;
+            }
+            
+            .right-icons {
+                bottom: 433px;
+                right: 11px;
+            }
+            
+            .right-icon {
+                width: 37px;
+                height: 37px;
+            }
+            
+            .formula-text {
+                bottom: 230px;
+                left: 37px;
+                right: 37px;
+            }
+            
+            .formula-title {
+                font-size: 15px;
+            }
+            
+            .formula-list, .formula-stats {
+                font-size: 11px;
+            }
+            
+            .group-image-left {
+                bottom: 84px;
+                left: 22px;
+                width: 136px;
+            }
+            
+            .right-column-icons {
+                bottom: 94px;
+                right: 11px;
+            }
+            
+            .column-item {
+                font-size: 9px;
+            }
+            
+            .column-icon {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .learn-more-btn {
+                bottom: 17px;
+                left: 22px;
+                right: 22px;
+                width: calc(100% - 44px);
+                font-size: 14.5px;
+                padding: 15px 22px;
+            }
+        }
+        
+        /* Для очень маленьких экранов */
+        @media (max-width: 360px) {
+            body {
+                padding: 15px 5px;
+                transform: scale(0.8);
+            }
+            
+            .visiting-card {
+                width: 100%;
+                max-width: 320px;
+                height: 780px;
+            }
+        }
+        
+        /* Для средних экранов */
+        @media (min-width: 481px) and (max-width: 768px) {
+            body {
+                transform: scale(0.9);
+            }
+        }
+        
+        /* Для высоких экранов */
+        @media (min-height: 800px) and (max-width: 480px) {
+            body {
+                transform: scale(0.9);
+            }
+            
+            .visiting-card {
+                height: 780px;
+            }
+        }
+        
+        /* Для горизонтальной ориентации */
+        @media (max-width: 480px) and (orientation: landscape) {
+            body {
+                padding: 10px 5px;
+                transform: scale(0.7);
+            }
+            
+            .visiting-card {
+                width: 320px;
+                height: 780px;
+            }
+        }
+        
+        /* Для очень высоких экранов */
+        @media (min-height: 900px) and (max-width: 480px) {
+            body {
+                transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="visiting-card">
+        <img src="./img/Group 26 (1).png" alt="Ксения Самсонова" class="profile-image">
+        <img src="./img/Rectangle 4 (1).png" alt="Дополнительная картинка" class="middle-image">
+        
+        <img src="./img/Group 32.png" alt="Group 32" class="group-32-image">
+        
+        <img src="./img/Group 7 (1).png" alt="Значок" class="icon">
+        
+        <img src="./img/Group 35.png" alt="Скачать визитку" class="group-35" onclick="downloadPDF()">
+        
+        <div class="right-icons">
+            <img src="./img/Group 11.png" alt="Telegram" class="right-icon" onclick="openTelegram()">
+            <img src="./img/Group 21.png" alt="Yandex почта" class="right-icon" onclick="openYandexMail()">
+            <img src="./img/Group 24.png" alt="Поделиться" class="right-icon" onclick="shareCard()">
+        </div>
+        
+        <div class="formula-text">
+            <div class="formula-title">Соберите свою формулу успеха<br>Performance-маркетинг на Ozon</div>
+            
+            <div class="divider"></div>
+            
+            <div class="formula-list">
+                <div class="formula-item">Разбираем ugc и как его использовать в маркетинге</div>
+                <div class="formula-item">Внедряем сквозную аналитику, чтобы вы видели реальный ROI с каждого товара</div>
+            </div>
+            
+            <div class="formula-stats">Увеличиваем ROAS до 400%, удерживая CPA ниже 500</div>
+        </div>
+        
+        <img src="./img/Group.png" alt="Group" class="group-image-left">
+        
+        <!-- Картинки с текстом - ПРИБЛИЖЕНЫ К ЛЕВОМУ КРАЮ -->
+        <div class="right-column-icons">
+            <a href="tel:+79776331974" class="column-item">
+                <img src="./img/Vector.png" alt="Телефон" class="column-icon">
+                <span class="column-text">+7 (977) 633-19-74</span>
+            </a>
+            <a href="https://mail.yandex.ru/?uid=1130000069905&login=teza-agency#compose" class="column-item" target="_blank">
+                <img src="./img/Group 17.png" alt="Email" class="column-icon">
+                <span class="column-text">teza-agency@yandex.ru</span>
+            </a>
+            <a href="https://t.me/Teza_ozon" class="column-item" target="_blank">
+                <img src="./img/Group 10.png" alt="Telegram" class="column-icon">
+                <span class="column-text">@Teza_ozon</span>
+            </a>
+        </div>
+        
+        <a href="https://t.me/Teza_ozon" class="learn-more-btn" target="_blank">Узнать больше</a>
+        
+        <div class="text-block">
+            <div class="name">Ксения<br>Самсонова</div>
+            <div class="title">Основательница агентства<br>performance маркетинга <span class="agency-name">ТЕЗА</span></div>
+        </div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            const link = document.createElement('a');
+            link.download = 'iPhone 16 - 1 (3).pdf';
+            link.href = './img/iPhone 16 - 1 (3).pdf';
+            link.click();
+        }
+
+        function openTelegram() {
+            window.open('https://t.me/Teza_ozon', '_blank');
+        }
+
+        function openYandexMail() {
+            window.open('https://mail.yandex.ru/?uid=1130000069905&login=teza-agency#compose', '_blank');
+        }
+
+        function shareCard() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Визитка Ксении Самсоновой',
+                    text: 'Ксения Самсонова - Основательница агентства performance маркетинга ТЕЗА',
+                    url: window.location.href
+                })
+                .then(() => console.log('Успешный шаринг'))
+                .catch((error) => console.log('Ошибка шаринга', error));
+            } else {
+                alert('Скопируйте ссылку: ' + window.location.href);
+            }
+        }
+    </script>
+</body>
+</html>
