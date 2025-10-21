@@ -73,17 +73,17 @@
 
         .name {
             font-family: 'Inter', sans-serif;
-            font-weight: 500;
+            font-weight: 545;
             font-size: 29px;
-            line-height: 1;
+            line-height: 0.95;
             margin-bottom: 4px;
         }
 
         .title {
             font-family: 'Inter', sans-serif;
-            font-weight: 300;
+            font-weight: 250;
             font-size: 11px;
-            line-height: 1;
+            line-height: 1.2;
         }
 
         .agency-name {
@@ -141,27 +141,33 @@
         }
 
         .formula-title {
-            font-weight: 540;
-            font-size: 15px;
-            line-height: 1.2;
-            margin-bottom: 17px;
+            width: 100%;
+            margin-bottom: 30px;
             text-align: center;
             padding-left: 0;
         }
 
+        .formula-title img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+
         .divider {
             width: 87px;
-            height: 1px;
+            height: 1.5px;
             background: #186DB3;
             margin: 17px auto;
-            opacity: 0.7;
+            opacity: 0.;
+            position: relative;
+            top: -10px;
         }
 
         .formula-list {
             text-align: left;
             font-weight: 400;
-            font-size: 11px;
-            line-height: 1.4;
+            font-size: 12px;
+            line-height: 1;
             margin-left: 0;
             padding-left: 0;
         }
@@ -174,8 +180,8 @@
 
         .formula-stats {
             font-weight: 400;
-            font-size: 11px;
-            line-height: 1.3;
+            font-size: 12px;
+            line-height: 1;
             color: #186DB3;
             margin-top: 13px;
             text-align: left;
@@ -185,10 +191,10 @@
 
         .group-image-left {
             position: absolute;
-            bottom: 84px;
-            left: 22px;
+            bottom: 95px;
+            left: 37px; /* Выровнено с левым краем текста */
             z-index: 10;
-            width: 136px;
+            width: 110px; /* Уменьшен размер */
             height: auto;
         }
 
@@ -355,12 +361,17 @@
             
             .formula-list, .formula-stats {
                 font-size: 11px;
+                margin-top: 20px;
             }
             
             .group-image-left {
-                bottom: 84px;
-                left: 22px;
-                width: 136px;
+                position: absolute;
+                bottom: 95px;
+                left: 37px;
+                z-index: 10;
+                width: 130px;
+                height: auto;
+                
             }
             
             .right-column-icons {
@@ -458,7 +469,9 @@
         </div>
         
         <div class="formula-text">
-            <div class="formula-title">Соберите свою формулу успеха<br>Performance-маркетинг на Ozon</div>
+            <div class="formula-title">
+                <img src="./img/Group 51.png" alt="Соберите свою формулу успеха Performance-маркетинг на Ozon">
+            </div>
             
             <div class="divider"></div>
             
@@ -467,7 +480,7 @@
                 <div class="formula-item">Внедряем сквозную аналитику, чтобы вы видели реальный ROI с каждого товара</div>
             </div>
             
-            <div class="formula-stats">Увеличиваем ROAS до 400%, удерживая CPA ниже 500</div>
+            <div class="formula-stats">Увеличиваем ROAS до 400%, удерживая CPA ниже 500 р.</div>
         </div>
         
         <img src="./img/Group.png" alt="Group" class="group-image-left">
@@ -499,8 +512,8 @@
     <script>
         function downloadPDF() {
             const link = document.createElement('a');
-            link.download = 'iPhone 16 - 1 (3).pdf';
-            link.href = './img/iPhone 16 - 1 (3).pdf';
+            link.download = 'Цифровая визитка.pdf';
+            link.href = './img/Цифровая визитка.pdf';
             link.click();
         }
 
